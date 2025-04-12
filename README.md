@@ -1,4 +1,4 @@
-# Avaliação do Uso de LLMs em MES
+# Avaliação do Uso de LLMs para Resolução de Issues no GitHub.
 
 ## Autores
 - Ana Lucia Oliveira de Paula  
