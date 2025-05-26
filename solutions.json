@@ -34,5 +34,17 @@
   "pydicom__pydicom-1256__deepseek-chat": {
     "model_patch": "diff --git a/pydicom/jsonrep.py b/pydicom/jsonrep.py\nindex c6ef519c3..697bba8b0 100644\n--- a/pydicom/jsonrep.py\n+++ b/pydicom/jsonrep.py\n@@ -224,9 +224,10 @@ class JsonDataElementConverter:\n                         VR=vr)\n                 else:\n                     value_key = unique_value_keys[0]\n-                    elem = DataElement.from_json(\n+                elem = DataElement.from_json(\n                         self.dataset_class, key, vr,\n-                        val[value_key], value_key\n+                        val[value_key], value_key,\n+                        self.bulk_data_element_handler\n                     )\n                 ds.add(elem)\n         return ds\n",
     "model_name_or_path": "deepseek-chat"
+  },
+    "pydicom__pydicom-1256__claude-3.7": {
+    "model_patch": "diff --git a/pydicom/jsonrep.py b/pydicom/jsonrep.py\nindex c6ef519c3..52bf00ce0 100644\n--- a/pydicom/jsonrep.py\n+++ b/pydicom/jsonrep.py\n@@ -226,7 +226,8 @@ class JsonDataElementConverter:\n                     value_key = unique_value_keys[0]\n                     elem = DataElement.from_json(\n                         self.dataset_class, key, vr,\n-                        val[value_key], value_key\n+                        val[value_key], value_key,\n+                        self.bulk_data_element_handler\n                     )\n                 ds.add(elem)\n         return ds\n",
+    "model_name_or_path": "claude-3.7"
+  },
+  "pytest-dev__pytest-6116__claude-3.7": {
+    "model_patch": "diff --git a/src/_pytest/main.py b/src/_pytest/main.py\nindex 843c5b5f7..b4261c188 100644\n--- a/src/_pytest/main.py\n+++ b/src/_pytest/main.py\n@@ -109,6 +109,7 @@ def pytest_addoption(parser):\n     group.addoption(\n         \"--collectonly\",\n         \"--collect-only\",\n+        \"--co\",\n         action=\"store_true\",\n         help=\"only collect tests, don't execute them.\",\n     ),\n",
+    "model_name_or_path": "claude-3.7"
+  },
+  "pytest-dev__pytest-6116__deepseek-chat": {
+    "model_patch": "diff --git a/src/_pytest/main.py b/src/_pytest/main.py\nindex 843c5b5f7..78c580395 100644\n--- a/src/_pytest/main.py\n+++ b/src/_pytest/main.py\n@@ -107,6 +107,7 @@ def pytest_addoption(parser):\n \n     group = parser.getgroup(\"collect\", \"collection\")\n     group.addoption(\n+        \"-C\",\n         \"--collectonly\",\n         \"--collect-only\",\n         action=\"store_true\",\n",
+    "model_name_or_path": "deepseek-chat"
   }
 }

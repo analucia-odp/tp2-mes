@@ -7,5 +7,7 @@ pallets__flask-5063,pallets/flask,182ce3dd15dfa3537391c3efaf9c3ff407d134d4,test,
 pallets__flask-5063,pallets/flask,182ce3dd15dfa3537391c3efaf9c3ff407d134d4,test,deepseek-chat,182300.0,1800.0,4.0,0.0709,34.0,2.0,31.0,3.0
 django__django-14382,django/django,29345aecf6e8d53ccb3577a3762bb0c263f7558d,test,claude-3.7,123900.0,952.0,3.0,0.0801,2.0,1.0,1.0,1.0
 django__django-14382,django/django,29345aecf6e8d53ccb3577a3762bb0c263f7558d,test,deepseek-chat,169700.0,645.0,3.0,0.0725,2.0,1.0,1.0,1.0
-pydicom__pydicom-1256,pydicom/pydicom,49a3da4a3d9c24d7e8427a25048a1c7d5c4f7724,dev,claude-3.7,,,,,,,,
+pydicom__pydicom-1256,pydicom/pydicom,49a3da4a3d9c24d7e8427a25048a1c7d5c4f7724,dev,claude-3.7,663700.0,3000.0,21.0,0.3983,3.0,1.0,2.0,1.0
 pydicom__pydicom-1256,pydicom/pydicom,49a3da4a3d9c24d7e8427a25048a1c7d5c4f7724,dev,deepseek-chat,163600.0,460.0,3.0,0.0759,5.0,1.0,3.0,2.0
+pytest-dev__pytest-6116,pytest-dev/pytest,e670ff76cbad80108bde9bab616b66771b8653cf,test,claude-3.7,107600.0,1800.0,5.0,0.1383,1.0,1.0,1.0,0.0
+pytest-dev__pytest-6116,pytest-dev/pytest,e670ff76cbad80108bde9bab616b66771b8653cf,test,deepseek-chat,56600.0,598.0,3.0,0.0253,1.0,1.0,1.0,0.0
