@@ -26,5 +26,13 @@
   "django__django-14382__deepseek-chat": {
     "model_patch": "diff --git a/django/core/management/templates.py b/django/core/management/templates.py\nindex 8dc6068286..f248ab1b71 100644\n--- a/django/core/management/templates.py\n+++ b/django/core/management/templates.py\n@@ -74,7 +74,7 @@ class TemplateCommand(BaseCommand):\n                 raise CommandError(e)\n         else:\n             if app_or_project == 'app':\n-                self.validate_name(os.path.basename(target), 'directory')\n+                self.validate_name(os.path.basename(target.rstrip(os.sep)), 'directory')\n             top_dir = os.path.abspath(os.path.expanduser(target))\n             if not os.path.exists(top_dir):\n                 raise CommandError(\"Destination directory '%s' does not \"\n",
     "model_name_or_path": "deepseek-chat"
+  },
+  "django__django-14382__claude-3.7": {
+    "model_patch": "diff --git a/django/core/management/templates.py b/django/core/management/templates.py\nindex 8dc60682868..f248ab1b71a 100644\n--- a/django/core/management/templates.py\n+++ b/django/core/management/templates.py\n@@ -74,7 +74,7 @@ class TemplateCommand(BaseCommand):\n                 raise CommandError(e)\n         else:\n             if app_or_project == 'app':\n-                self.validate_name(os.path.basename(target), 'directory')\n+                self.validate_name(os.path.basename(target.rstrip(os.sep)), 'directory')\n             top_dir = os.path.abspath(os.path.expanduser(target))\n             if not os.path.exists(top_dir):\n                 raise CommandError(\"Destination directory '%s' does not \"\n",
+    "model_name_or_path": "claude-3.7"
+  },
+  "pydicom__pydicom-1256__deepseek-chat": {
+    "model_patch": "diff --git a/pydicom/jsonrep.py b/pydicom/jsonrep.py\nindex c6ef519c3..697bba8b0 100644\n--- a/pydicom/jsonrep.py\n+++ b/pydicom/jsonrep.py\n@@ -224,9 +224,10 @@ class JsonDataElementConverter:\n                         VR=vr)\n                 else:\n                     value_key = unique_value_keys[0]\n-                    elem = DataElement.from_json(\n+                elem = DataElement.from_json(\n                         self.dataset_class, key, vr,\n-                        val[value_key], value_key\n+                        val[value_key], value_key,\n+                        self.bulk_data_element_handler\n                     )\n                 ds.add(elem)\n         return ds\n",
+    "model_name_or_path": "deepseek-chat"
   }
 }
