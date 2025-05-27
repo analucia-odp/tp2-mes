@@ -13,3 +13,5 @@ pytest-dev__pytest-6116,pytest-dev/pytest,e670ff76cbad80108bde9bab616b66771b8653
 pytest-dev__pytest-6116,pytest-dev/pytest,e670ff76cbad80108bde9bab616b66771b8653cf,test,deepseek-chat,56600.0,598.0,3.0,0.0253,1.0,1.0,1.0,0.0
 django__django-14787,django/django,004b4620f6f4ad87261e149898940f2dcd5757ef,test,claude-3.7,69200.0,1800.0,4.0,0.1243,2.0,1.0,2.0,0.0
 django__django-14787,django/django,004b4620f6f4ad87261e149898940f2dcd5757ef,test,deepseek-chat,51000.0,770.0,4.0,0.0237,26.0,2.0,26.0,0.0
+django__django-14915,django/django,903aaa35e5ceaa33bfc9b19b7f6da65ce5a91dd4,test,claude-3.7,179800.0,2400.0,5.0,0.2133,3.0,1.0,3.0,0.0
+django__django-14915,django/django,903aaa35e5ceaa33bfc9b19b7f6da65ce5a91dd4,test,deepseek-chat,109000.0,1200.0,5.0,0.0477,3.0,1.0,3.0,0.0
