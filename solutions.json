@@ -35,7 +35,7 @@
     "model_patch": "diff --git a/pydicom/jsonrep.py b/pydicom/jsonrep.py\nindex c6ef519c3..697bba8b0 100644\n--- a/pydicom/jsonrep.py\n+++ b/pydicom/jsonrep.py\n@@ -224,9 +224,10 @@ class JsonDataElementConverter:\n                         VR=vr)\n                 else:\n                     value_key = unique_value_keys[0]\n-                    elem = DataElement.from_json(\n+                elem = DataElement.from_json(\n                         self.dataset_class, key, vr,\n-                        val[value_key], value_key\n+                        val[value_key], value_key,\n+                        self.bulk_data_element_handler\n                     )\n                 ds.add(elem)\n         return ds\n",
     "model_name_or_path": "deepseek-chat"
   },
-    "pydicom__pydicom-1256__claude-3.7": {
+  "pydicom__pydicom-1256__claude-3.7": {
     "model_patch": "diff --git a/pydicom/jsonrep.py b/pydicom/jsonrep.py\nindex c6ef519c3..52bf00ce0 100644\n--- a/pydicom/jsonrep.py\n+++ b/pydicom/jsonrep.py\n@@ -226,7 +226,8 @@ class JsonDataElementConverter:\n                     value_key = unique_value_keys[0]\n                     elem = DataElement.from_json(\n                         self.dataset_class, key, vr,\n-                        val[value_key], value_key\n+                        val[value_key], value_key,\n+                        self.bulk_data_element_handler\n                     )\n                 ds.add(elem)\n         return ds\n",
     "model_name_or_path": "claude-3.7"
   },
@@ -46,5 +46,29 @@
   "pytest-dev__pytest-6116__deepseek-chat": {
     "model_patch": "diff --git a/src/_pytest/main.py b/src/_pytest/main.py\nindex 843c5b5f7..78c580395 100644\n--- a/src/_pytest/main.py\n+++ b/src/_pytest/main.py\n@@ -107,6 +107,7 @@ def pytest_addoption(parser):\n \n     group = parser.getgroup(\"collect\", \"collection\")\n     group.addoption(\n+        \"-C\",\n         \"--collectonly\",\n         \"--collect-only\",\n         action=\"store_true\",\n",
     "model_name_or_path": "deepseek-chat"
+  },
+  "django__django-15902__deepseek-chat": {
+    "model_patch": "diff --git a/django/forms/formsets.py b/django/forms/formsets.py\nindex 3adbc6979a..7b63308d3f 100644\n--- a/django/forms/formsets.py\n+++ b/django/forms/formsets.py\n@@ -31,6 +31,7 @@ class ManagementForm(Form):\n     new forms via JavaScript, you should increment the count field of this form\n     as well.\n     \"\"\"\n+    template_name_div = \"django/forms/formsets/div.html\"\n \n     TOTAL_FORMS = IntegerField(widget=HiddenInput)\n     INITIAL_FORMS = IntegerField(widget=HiddenInput)\n",
+    "model_name_or_path": "deepseek-chat"
+  },
+  "django__django-15902__claude-3.7": {
+    "model_patch": "diff --git a/django/forms/formsets.py b/django/forms/formsets.py\nindex 3adbc6979a..bb90a669f6 100644\n--- a/django/forms/formsets.py\n+++ b/django/forms/formsets.py\n@@ -40,6 +40,8 @@ class ManagementForm(Form):\n     MIN_NUM_FORMS = IntegerField(required=False, widget=HiddenInput)\n     MAX_NUM_FORMS = IntegerField(required=False, widget=HiddenInput)\n \n+    template_name = \"django/forms/div.html\"\n+\n     def clean(self):\n         cleaned_data = super().clean()\n         # When the management form is invalid, we don't know how many forms\n",
+    "model_name_or_path": "claude-3.7"
+  },
+  "django__django-13925__deepseek-chat": {
+    "model_patch": "diff --git a/django/db/models/base.py b/django/db/models/base.py\nindex 4038859cfa..9e69f1b480 100644\n--- a/django/db/models/base.py\n+++ b/django/db/models/base.py\n@@ -1297,6 +1297,10 @@ class Model(metaclass=ModelBase):\n \n     @classmethod\n     def _check_default_pk(cls):\n+        # Skip the warning if the model inherits a primary key\n+        if cls._meta.parents and any(parent._meta.pk for parent in cls._meta.parents.values()):\n+            return []\n+            \n         if (\n             cls._meta.pk.auto_created and\n             not settings.is_overridden('DEFAULT_AUTO_FIELD') and\n",
+    "model_name_or_path": "deepseek-chat"
+  },
+  "django__django-13925__claude-3.7": {
+    "model_patch": "diff --git a/django/db/models/base.py b/django/db/models/base.py\nindex 4038859cfa..0f03705de7 100644\n--- a/django/db/models/base.py\n+++ b/django/db/models/base.py\n@@ -1297,10 +1297,17 @@ class Model(metaclass=ModelBase):\n \n     @classmethod\n     def _check_default_pk(cls):\n+        # N\u00e3o emitir aviso para modelos que herdam a chave prim\u00e1ria de um modelo pai\n         if (\n             cls._meta.pk.auto_created and\n             not settings.is_overridden('DEFAULT_AUTO_FIELD') and\n-            not cls._meta.app_config._is_default_auto_field_overridden\n+            not cls._meta.app_config._is_default_auto_field_overridden and\n+            # Verificar se este \u00e9 um modelo filho que herda a chave prim\u00e1ria\n+            not (cls._meta.parents and any(\n+                parent._meta.pk is cls._meta.pk or\n+                parent._meta.pk.primary_key is True\n+                for parent in cls._meta.parents\n+            ))\n         ):\n             return [\n                 checks.Warning(\n",
+    "model_name_or_path": "claude-3.7"
+  },
+  "sympy__sympy-24102__deepseek-chat": {
+    "model_patch": "diff --git a/sympy/parsing/mathematica.py b/sympy/parsing/mathematica.py\nindex 7ea14ce33a..8e320abce6 100644\n--- a/sympy/parsing/mathematica.py\n+++ b/sympy/parsing/mathematica.py\n@@ -1067,6 +1067,9 @@ def recurse(expr):\n                     head = self._node_conversions.get(expr[0], Function(expr[0]))\n                 return head(*list(recurse(arg) for arg in expr[1:]))\n             else:\n+                # Handle Unicode characters (like Greek letters) properly\n+                if isinstance(expr, str) and not expr.isascii():\n+                    return symbols(expr)\n                 return self._atom_conversions.get(expr, sympify(expr))\n \n         return recurse(full_form_list)\n",
+    "model_name_or_path": "deepseek-chat"
+  },
+  "sympy__sympy-24102__claude-3.7": {
+    "model_patch": "diff --git a/sympy/parsing/mathematica.py b/sympy/parsing/mathematica.py\nindex 7ea14ce33a..47f5dda1e6 100644\n--- a/sympy/parsing/mathematica.py\n+++ b/sympy/parsing/mathematica.py\n@@ -586,7 +586,7 @@ def parse(self, s):\n         \"##\": lambda: [\"SlotSequence\", \"1\"],\n     }\n \n-    _literal = r\"[A-Za-z][A-Za-z0-9]*\"\n+    _literal = r\"[A-Za-z\\u0370-\\u03FF\\u1F00-\\u1FFF][A-Za-z0-9\\u0370-\\u03FF\\u1F00-\\u1FFF]*\"\n     _number = r\"(?:[0-9]+(?:\\.[0-9]*)?|\\.[0-9]+)\"\n \n     _enclosure_open = [\"(\", \"[\", \"[[\", \"{\"]\n",
+    "model_name_or_path": "claude-3.7"
   }
 }
