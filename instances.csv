@@ -23,3 +23,9 @@ django__django-13925,django/django,0c42cdf0d2422f4c080e93594d5d15381d6e955e,test
 django__django-13925,django/django,0c42cdf0d2422f4c080e93594d5d15381d6e955e,test,deepseek-chat,423300.0,1900.0,11.0,0.1642,4.0,1.0,4.0,0.0
 sympy__sympy-24102,sympy/sympy,58598660a3f6ab3d918781c4988c2e4b2bdd9297,test,claude-3.7,212300.0,3100.0,6.0,0.3466,2.0,1.0,1.0,1.0
 sympy__sympy-24102,sympy/sympy,58598660a3f6ab3d918781c4988c2e4b2bdd9297,test,deepseek-chat,265500.0,858.0,3.0,0.0278,3.0,1.0,3.0,0.0
+pydicom__pydicom-1694,pydicom/pydicom,f8cf45b6c121e5a4bf4a43f71aba3bc64af3db9c,dev,claude-3.7,527800.0,5700.0,13.0,0.7214,2.0,1.0,1.0,1.0
+pydicom__pydicom-1694,pydicom/pydicom,f8cf45b6c121e5a4bf4a43f71aba3bc64af3db9c,dev,deepseek-chat,47100.0,208.0,2.0,0.0181,4.0,1.0,2.0,2.0
+sqlfluff__sqlfluff-1625,sqlfluff/sqlfluff,14e1a23a3166b9a645a16de96f694c77a5d4abb7,dev,claude-3.7,21900.0,1700.0,3.0,0.1268,29.0,1.0,21.0,8.0
+sqlfluff__sqlfluff-1625,sqlfluff/sqlfluff,14e1a23a3166b9a645a16de96f694c77a5d4abb7,dev,deepseek-chat,51500.0,1300.0,3.0,0.0234,61.0,1.0,37.0,24.0
+pylint-dev__pylint-7114,pylint-dev/pylint,397c1703e8ae6349d33f7b99f45b2ccaf581e666,test,claude-3.7,2759600.0,15000.0,51.0,3.2107,748.0,2.0,11.0,737.0
+pylint-dev__pylint-7114,pylint-dev/pylint,397c1703e8ae6349d33f7b99f45b2ccaf581e666,test,deepseek-chat,95500.0,1500.0,4.0,0.0398,10.0,1.0,10.0,0.0
