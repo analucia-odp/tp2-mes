@@ -11,12 +11,12 @@ pydicom__pydicom-1256,pydicom/pydicom,49a3da4a3d9c24d7e8427a25048a1c7d5c4f7724,d
 pydicom__pydicom-1256,pydicom/pydicom,49a3da4a3d9c24d7e8427a25048a1c7d5c4f7724,dev,deepseek-chat,163600.0,460.0,3.0,0.0759,5.0,1.0,3.0,2.0,0
 pytest-dev__pytest-6116,pytest-dev/pytest,e670ff76cbad80108bde9bab616b66771b8653cf,test,claude-3.7,107600.0,1800.0,5.0,0.1383,1.0,1.0,1.0,0.0,1
 pytest-dev__pytest-6116,pytest-dev/pytest,e670ff76cbad80108bde9bab616b66771b8653cf,test,deepseek-chat,56600.0,598.0,3.0,0.0253,1.0,1.0,1.0,0.0,0
-django__django-14787,django/django,004b4620f6f4ad87261e149898940f2dcd5757ef,test,claude-3.7,69200.0,1800.0,4.0,0.1243,2.0,1.0,2.0,0.0,0
-django__django-14787,django/django,004b4620f6f4ad87261e149898940f2dcd5757ef,test,deepseek-chat,51000.0,770.0,4.0,0.0237,26.0,2.0,26.0,0.0,0
-django__django-14915,django/django,903aaa35e5ceaa33bfc9b19b7f6da65ce5a91dd4,test,claude-3.7,179800.0,2400.0,5.0,0.2133,3.0,1.0,3.0,0.0,0
-django__django-14915,django/django,903aaa35e5ceaa33bfc9b19b7f6da65ce5a91dd4,test,deepseek-chat,109000.0,1200.0,5.0,0.0477,3.0,1.0,3.0,0.0,0
+django__django-14787,django/django,004b4620f6f4ad87261e149898940f2dcd5757ef,test,claude-3.7,69200.0,1800.0,4.0,0.1243,2.0,1.0,2.0,0.0,1
+django__django-14787,django/django,004b4620f6f4ad87261e149898940f2dcd5757ef,test,deepseek-chat,51000.0,770.0,4.0,0.0237,26.0,2.0,26.0,0.0,1
+django__django-14915,django/django,903aaa35e5ceaa33bfc9b19b7f6da65ce5a91dd4,test,claude-3.7,179800.0,2400.0,5.0,0.2133,3.0,1.0,3.0,0.0,1
+django__django-14915,django/django,903aaa35e5ceaa33bfc9b19b7f6da65ce5a91dd4,test,deepseek-chat,109000.0,1200.0,5.0,0.0477,3.0,1.0,3.0,0.0,1
 pytest-dev__pytest-7220,pytest-dev/pytest,56bf819c2f4eaf8b36bd8c42c06bb59d5a3bfc0f,test,claude-3.7,580200.0,3800.0,14.0,1.1988,8.0,1.0,8.0,0.0,0
-pytest-dev__pytest-7220,pytest-dev/pytest,56bf819c2f4eaf8b36bd8c42c06bb59d5a3bfc0f,test,deepseek-chat,121200.0,1300.0,6.0,0.0501,11.0,1.0,3.0,8.0,0
+pytest-dev__pytest-7220,pytest-dev/pytest,56bf819c2f4eaf8b36bd8c42c06bb59d5a3bfc0f,test,deepseek-chat,121200.0,1300.0,6.0,0.0501,11.0,1.0,3.0,8.0,1
 django__django-15902,django/django,44c24bf02835323d5418512ebe8e76166739ebf8,test,claude-3.7,452500.0,1400.0,10.0,0.3379,2.0,1.0,2.0,0.0,1
 django__django-15902,django/django,44c24bf02835323d5418512ebe8e76166739ebf8,test,deepseek-chat,60600.0,869.0,4.0,0.0288,1.0,1.0,1.0,0.0,0
 django__django-13925,django/django,0c42cdf0d2422f4c080e93594d5d15381d6e955e,test,claude-3.7,295900.0,1600.0,8.0,0.3409,9.0,1.0,8.0,1.0,1

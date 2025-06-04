@@ -69,6 +69,8 @@
   },
   "pytest-dev__pytest-7220__claude-3.7": {
     "model_patch": "diff --git a/src/_pytest/main.py b/src/_pytest/main.py\nindex de7e16744..72edb6f32 100644\n--- a/src/_pytest/main.py\n+++ b/src/_pytest/main.py\n@@ -421,6 +421,14 @@ class Session(nodes.FSCollector):\n \n     def _node_location_to_relpath(self, node_path: py.path.local) -> str:\n         # bestrelpath is a quite slow function\n+        try:\n+            # Check if the current working directory has changed from the original directory\n+            if os.getcwd() != str(self.startdir):\n+                # Use absolute path if cwd has changed\n+                return str(node_path)\n+        except OSError:\n+            # If os.getcwd() fails, use absolute path\n+            return str(node_path)\n         return self._bestrelpathcache[node_path]\n \n     @hookimpl(tryfirst=True)\n",
+    "model_name_or_path": "claude-3.7"
+  },
   "django__django-15902__deepseek-chat": {
     "model_patch": "diff --git a/django/forms/formsets.py b/django/forms/formsets.py\nindex 3adbc6979a..7b63308d3f 100644\n--- a/django/forms/formsets.py\n+++ b/django/forms/formsets.py\n@@ -31,6 +31,7 @@ class ManagementForm(Form):\n     new forms via JavaScript, you should increment the count field of this form\n     as well.\n     \"\"\"\n+    template_name_div = \"django/forms/formsets/div.html\"\n \n     TOTAL_FORMS = IntegerField(widget=HiddenInput)\n     INITIAL_FORMS = IntegerField(widget=HiddenInput)\n",
     "model_name_or_path": "deepseek-chat"
